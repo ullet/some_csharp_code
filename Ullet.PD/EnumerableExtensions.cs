@@ -17,7 +17,7 @@ namespace Ullet.PD
   public static class EnumerableExtensions
   {
     /// <summary>
-    /// Append one or more <paramref name="items"/> to end of 
+    /// Append zero or more <paramref name="items"/> to end of 
     /// <paramref name="enumerable"/>.
     /// </summary>
     public static IEnumerable<T> Append<T>(
@@ -33,6 +33,105 @@ namespace Ullet.PD
       this IEnumerable<T> enumerable, Action<T> action)
     {
       enumerable.ToList().ForEach(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="enumerable"/>
+    /// along with each items index within the enumeration.
+    /// </summary>
+    public static void ForEach<T>(
+      this IEnumerable<T> enumerable, Action<int, T> action)
+    {
+      enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each indexed item in
+    /// <paramref name="enumerable"/>.
+    /// </summary>
+    public static void ForEach<T>(
+      this IEnumerable<T> enumerable, Action<ItemWithIndex<T>> action)
+    {
+      enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="enumerable"/>.
+    /// </summary>
+    public static void Each<T>(this IEnumerable<T> enumerable, Action<T> action)
+    {
+      enumerable.ForEach(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="enumerable"/>
+    /// along with each items index within the enumeration.
+    /// </summary>
+    public static void Each<T>(
+      this IEnumerable<T> enumerable, Action<int, T> action)
+    {
+      enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each indexed item in
+    /// <paramref name="enumerable"/>.
+    /// </summary>
+    public static void Each<T>(
+      this IEnumerable<T> enumerable, Action<ItemWithIndex<T>> action)
+    {
+      enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="enumerable"/>
+    /// along with each items index within the enumeration.
+    /// </summary>
+    public static void ForEachWithIndex<T>(
+      this IEnumerable<T> enumerable, Action<int, T> action)
+    {
+      enumerable.ForEachWithIndex(x => action(x.Index, x.Item));
+    }
+
+    /// <summary>
+    /// Perform specified action on each indexed item in
+    /// <paramref name="enumerable"/>.
+    /// </summary>
+    public static void ForEachWithIndex<T>(
+      this IEnumerable<T> enumerable, Action<ItemWithIndex<T>> action)
+    {
+      enumerable.WithIndex().ForEach(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="enumerable"/>
+    /// along with each items index within the enumeration.
+    /// </summary>
+    public static void EachWithIndex<T>(
+      this IEnumerable<T> enumerable, Action<int, T> action)
+    {
+      enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each indexed item in
+    /// <paramref name="enumerable"/>.
+    /// </summary>
+    public static void EachWithIndex<T>(
+      this IEnumerable<T> enumerable, Action<ItemWithIndex<T>> action)
+    {
+      enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Map items in enumerable to a <see cref="ItemWithIndex{T}"/> tuple
+    /// pairing each item with its index within the enumeration.
+    /// </summary>
+    public static IEnumerable<ItemWithIndex<T>> WithIndex<T>(
+      this IEnumerable<T> source)
+    {
+      var index = 0;
+      return source.Select(x => new ItemWithIndex<T>(x, index++));
     }
   }
 }

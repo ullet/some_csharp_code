@@ -48,6 +48,7 @@
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="FunctionalExtensions.cs" />
     <Compile Include="CustomComparer.cs" />
+    <Compile Include="ItemWithIndex.cs" />
     <Compile Include="SpecificOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
