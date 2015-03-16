@@ -49,6 +49,7 @@
     <Compile Include="CustomComparerTests.cs" />
     <Compile Include="EnumerableExtensionsTests.cs" />
     <Compile Include="FunctionalExtensionsTests.cs" />
+    <Compile Include="RangeTests.cs" />
     <Compile Include="SpecificOrderingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
