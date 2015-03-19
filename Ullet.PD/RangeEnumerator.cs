@@ -10,7 +10,10 @@ using System.Collections.Generic;
 
 namespace Ullet.PD
 {
-  /// TODO <summary></summary>
+  /// <summary>
+  /// Enumerator for a bounded sequence of incrementing or decrementing integer
+  /// values.
+  /// </summary>
   public class RangeEnumerator : IEnumerator<int>
   {
     private readonly int _start;
@@ -18,7 +21,9 @@ namespace Ullet.PD
     private readonly int _step;
     private int? _current;
 
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Initialize a new range enumerator.
+    /// </summary>
     public RangeEnumerator(int start, int end, int step)
     {
       _start = start;
@@ -26,13 +31,17 @@ namespace Ullet.PD
       _step = step == 0 ? 1 : step;
     }
 
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Dispose resources.
+    /// </summary>
     public void Dispose()
     {
       // nothing to dispose
     }
 
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Move to next item in sequence.
+    /// </summary>
     public bool MoveNext()
     {
       if (_current == null)
@@ -42,13 +51,17 @@ namespace Ullet.PD
       return Sign * _current <= Sign * _end;
     }
 
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Reset enumerator to start of sequence.
+    /// </summary>
     public void Reset()
     {
       _current = null;
     }
 
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Get the current value in the sequence.
+    /// </summary>
     public int Current
     {
       get

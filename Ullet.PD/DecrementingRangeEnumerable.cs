@@ -8,17 +8,25 @@ using System;
 
 namespace Ullet.PD
 {
-  /// TODO <summary></summary>
+  /// <summary>
+  /// Enumerable of a bounded sequence of decrementing integer values.
+  /// </summary>
   public class DecrementingRangeEnumerable : RangeEnumerable
   {
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Initialize a new decrementing range enumeration.
+    /// </summary>
     public DecrementingRangeEnumerable(
       int? start = null, int? end = null, int? step = null)
       : base(start, end, NegativeStep(step))
     {
     }
 
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Value to decrement successive values in the range sequence.  Positive
+    /// and negative values are regarded as equivalent, both specifying the
+    /// absolute decrement value.
+    /// </summary>
     public override RangeEnumerable Step(int step)
     {
       return base.Step(NegativeStep(step));

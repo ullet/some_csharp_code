@@ -8,17 +8,30 @@ using System;
 
 namespace Ullet.PD
 {
-  /// TODO <summary></summary>
+  /// <summary>
+  /// Enumerable of a bounded sequence of incrementing integer values.
+  /// </summary>
   public class IncrementingRangeEnumerable : RangeEnumerable
   {
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Initialize a new incrementing range enumeration.
+    /// </summary>
     public IncrementingRangeEnumerable(
       int? start = null, int? end = null, int? step = null)
       : base(start, end, PositiveStep(step))
     {
     }
 
-    /// TODO <summary></summary>
+    /// <summary>
+    /// Value to increment successive values in the range sequence.  Positive
+    /// and negative values are regarded as equivalent, both specifying the
+    /// absolute increment value.
+    /// </summary>
+    /// <remarks>
+    /// Although positive and negative values of equivalent magnitude result in
+    /// the generation of the same sequence, a negative value is likely to cause
+    /// confusion.
+    /// </remarks>
     public override RangeEnumerable Step(int step)
     {
       return base.Step(PositiveStep(step));
