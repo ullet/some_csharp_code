@@ -32,7 +32,8 @@ namespace Ullet.PD.Enumerable
     public static void ForEach<T>(
       this IEnumerable<T> enumerable, Action<T> action)
     {
-      enumerable.ToList().ForEach(action);
+      foreach (var item in enumerable)
+        action(item);
     }
 
     /// <summary>
@@ -143,6 +144,65 @@ namespace Ullet.PD.Enumerable
       var items = source.ToArray();
       if (!items.Any()) throw new ArgumentException("Sequence empty", "source");
       return items.Aggregate(1, (a, v) => a * v);
+    }
+
+    /// <summary>
+    /// Calculate product of integer sequence with overflow checking.
+    /// </summary>
+    /// <exception cref="OverflowException">
+    /// Thrown if result would be greater than of <see cref="Int32.MaxValue"/>.
+    /// </exception>
+    public static int CheckedProduct(this IEnumerable<int> source)
+    {
+      if (source == null) throw new ArgumentNullException("source");
+      var items = source.ToArray();
+      if (!items.Any()) throw new ArgumentException("Sequence empty", "source");
+      return items.Aggregate(1, CheckedProduct);
+    }
+
+    private static int CheckedProduct(int first, int second)
+    {
+      checked
+      {
+        return first*second;
+      }
+    }
+
+    /// <summary>
+    /// Create sequence repeating value integer number of times.
+    /// </summary>
+    public static IEnumerable<T> Repeat<T>(this T item, int repeats)
+    {
+      for (var i = 0; i < repeats; i++)
+        yield return item;
+    }
+
+    /// <summary>
+    /// Create sequence repeating value integer number of times.
+    /// </summary>
+    public static IEnumerable<T> Repeat<T>(this T item, uint repeats)
+    {
+      for (uint i = 0; i < repeats; i++)
+        yield return item;
+    }
+
+    /// <summary>
+    /// Count sequence with greater than <see cref="Int32.MaxValue"/> items.
+    /// </summary>
+    /// <remarks>
+    /// Wil take relatively long time to count sequence has more than
+    /// <see cref="Int32.MaxValue"/> items.  If squence contains close to
+    /// <see cref="Int64.MaxValue"/> items do not expect this function to return
+    /// any time within the life time of your civilisation.
+    /// </remarks>
+    public static ulong BigCount<T>(
+      this IEnumerable<T> source,
+      Func<T, bool> predicate = null)
+    {
+      ulong count = 0;
+      var filtered = predicate == null ? source : source.Where(predicate);
+      filtered.Each((T x) => count++);
+      return count;
     }
   }
 }

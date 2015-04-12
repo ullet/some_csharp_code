@@ -251,5 +251,112 @@ namespace Ullet.PD.Tests.Unit.Enumerable
         Assert.That(values.Product(), Is.EqualTo(expectedProduct));
       }
     }
+
+    [TestFixture]
+    public class CheckedProductTests
+    {
+      [Test]
+      public void ExceptionIfNull()
+      {
+        Assert.Throws(
+          Is.InstanceOf<Exception>(),
+          () => ((int[])null).CheckedProduct());
+      }
+
+      [Test]
+      public void ExceptionIfEmpty()
+      {
+        Assert.Throws(
+          Is.InstanceOf<Exception>(),
+          () => (new int[] { }).CheckedProduct());
+      }
+
+      [TestCase(new[] { 1 }, 1)]
+      [TestCase(new[] { 1, 1, 1 }, 1)]
+      [TestCase(new[] { 2, 3, 4 }, 24)]
+      [TestCase(new[] { 99, 73, 0, 16, 11 }, 0)]
+      public void CalculatesProduct(int[] values, int expectedProduct)
+      {
+        Assert.That(values.CheckedProduct(), Is.EqualTo(expectedProduct));
+      }
+
+      [Test]
+      public void ExceptionIfOverflow()
+      {
+        Assert.Throws(
+          Is.InstanceOf<OverflowException>(),
+          () => (new[] { Int32.MaxValue, 2 }).CheckedProduct());
+      }
+    }
+
+    [TestFixture]
+    public class RepeatTests
+    {
+      [Test]
+      public void EmptySequenceIfRepeatZeroTimes()
+      {
+        Assert.That(9.Repeat(0), Is.Empty);
+        Assert.That(9.Repeat(0U), Is.Empty);
+      }
+
+      [Test]
+      public void EmptySequenceIfRepeatNegativeTimes()
+      {
+        Assert.That(9.Repeat(-3), Is.Empty);
+      }
+
+      [Test]
+      public void RepeatMultipleTimes()
+      {
+        Assert.That(9.Repeat(3), Is.EquivalentTo(new[] {9, 9, 9}));
+        Assert.That(9.Repeat(3U), Is.EquivalentTo(new[] {9, 9, 9}));
+      }
+
+      [Test]
+      [Explicit("Very slow test")]
+      public void RepeatMaxInt32Times()
+      {
+        Assert.That(
+          9.Repeat(Int32.MaxValue).Count(x => x == 9),
+          Is.EqualTo(Int32.MaxValue));
+      }
+
+      [Test]
+      [Explicit("Very slow test")]
+      public void RepeatMaxUInt32Times()
+      {
+        Assert.That(
+          9.Repeat(UInt32.MaxValue).BigCount(x => x == 9),
+          Is.EqualTo(UInt32.MaxValue));
+      }
+    }
+
+    [TestFixture]
+    public class BigCountTests
+    {
+      [Test]
+      public void EmptySequenceCountIsZero()
+      {
+        Assert.That(new object[] {}.BigCount(), Is.EqualTo(0UL));
+      }
+
+      [Test]
+      public void NullSequenceThrowsException()
+      {
+        Assert.Throws<NullReferenceException>(
+          () => ((object[]) null).BigCount());
+      }
+
+      [TestCase(1)]
+      [TestCase(10)]
+      [TestCase(100)]
+      [TestCase(1000000)]
+      public void CountSequence(int itemsInSequence)
+      {
+        Assert.That(
+          new Object().Repeat(itemsInSequence).BigCount(),
+          Is.EqualTo(itemsInSequence));
+      }
+    }
   }
 }

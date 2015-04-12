@@ -5,6 +5,7 @@
  */
 
 using System;
+using Ullet.PD.Enumerable;
 
 namespace Ullet.PD.Number
 {
@@ -65,14 +66,9 @@ namespace Ullet.PD.Number
     /// </exception>
     public static int RaiseToPower(this int value, uint power)
     {
-      checked
-      {
-        return power == 0 || value == 1
-          ? 1
-          : power == 1
-            ? value // save a recursive call
-            : value*value.RaiseToPower(power - 1);
-      }
+      return power == 0 || value == 1
+        ? 1
+        : value.Repeat(power).CheckedProduct();
     }
   }
 }

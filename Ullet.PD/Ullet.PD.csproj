@@ -47,6 +47,10 @@
     <Compile Include="Enumerable\DecrementingRangeEnumerable.cs" />
     <Compile Include="Dynamic\DynamicExtensions.cs" />
     <Compile Include="Enumerable\EnumerableExtensions.cs" />
+    <Compile Include="Enumerable\UnsignedDecrementingRangeEnumerable.cs" />
+    <Compile Include="Enumerable\UnsignedIncrementingRangeEnumerable.cs" />
+    <Compile Include="Enumerable\UnsignedRangeEnumerable.cs" />
+    <Compile Include="Enumerable\UnsignedRangeEnumerator.cs" />
     <Compile Include="Functional\FunctionalExtensions.cs" />
     <Compile Include="Sort\CustomComparer.cs" />
     <Compile Include="Enumerable\IncrementingRangeEnumerable.cs" />
