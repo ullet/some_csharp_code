@@ -22,20 +22,6 @@ namespace Ullet.PD.Tests.Unit.Sort
          () => CustomComparer.Create<object>(null));
     }
 
-    [Test]
-    public void CanCreateWithStaticMethod()
-    {
-      Assert.That(CustomComparer.Create<object>((x, y) => 0), Is.Not.Null);
-    }
-
-    [Test]
-    public void CanCreateWithExtensionMethod()
-    {
-      Assert.That(
-        (new Func<dynamic, dynamic, int>((x, y) => 0)).ToComparer(),
-        Is.Not.Null);
-    }
-
     [TestCase(-1)]
     [TestCase(1)]
     [TestCase(0)]

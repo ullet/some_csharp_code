@@ -311,6 +311,7 @@ namespace Ullet.PD.Tests.Unit.Dynamic
       : PreciseTypeRaiseToPowerTests<
           CustomTypeRaiseToPowerTests.CompatibleCustomType>
     {
+#pragma warning disable 659 // Only used in tests, don't need GetHashCode()
       public class CompatibleCustomType
       {
         private readonly int[] _values;
@@ -326,15 +327,9 @@ namespace Ullet.PD.Tests.Unit.Dynamic
               ints = new [] {t.Value};
             }
           }
-          if (ints == null)
-          {
-            _values = new int[] {};
-          }
-          else
-          {
-            _values = new int[ints.Length];
-            ints.CopyTo(_values, 0);
-          }
+          // ReSharper disable once PossibleNullReferenceException
+          _values = new int[ints.Length];
+          ints.CopyTo(_values, 0);
         }
 
         public CompatibleCustomType(params int[] values) : this((object)values)
@@ -388,16 +383,12 @@ namespace Ullet.PD.Tests.Unit.Dynamic
           return t != null && (ReferenceEquals(this, t) || Value == t.Value);
         }
 
-        public override int GetHashCode()
-        {
-          return 895739709 ^ Value;
-        }
-
         public override string ToString()
         {
           return "[" + string.Join(",", _values) + "]";
         }
       }
+#pragma warning restore 659
 
       protected override
         IEnumerable<CompatibleCustomType> RaiseToPowerZeroTestCases
@@ -465,20 +456,37 @@ namespace Ullet.PD.Tests.Unit.Dynamic
           Is.StringContaining("Operator '*' cannot be applied"));
       }
 
+      [TestFixture]
       public class NotMultipliable
       {
         public static implicit operator NotMultipliable(int i)
         {
           return new NotMultipliable();
         }
+
+        [Test]
+        public void ImplicitOperatorImplemented()
+        {
+          NotMultipliable nm = 1;
+          Assert.That(nm, Is.Not.Null);
+        }
       }
 
+      [TestFixture]
       public class NotConvertible
       {
         public static NotConvertible operator *(
           NotConvertible a, NotConvertible b)
         {
           return new NotConvertible();
+        }
+
+        [Test]
+        public void MultiplicationOperatorImplemented()
+        {
+          var a = new NotConvertible();
+          var b = new NotConvertible();
+          Assert.That(a*b, Is.InstanceOf<NotConvertible>());
         }
       }
     }

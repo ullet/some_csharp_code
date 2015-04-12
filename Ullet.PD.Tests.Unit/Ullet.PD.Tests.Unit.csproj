@@ -46,6 +46,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Dynamic\DynamicExtensionsTests.cs" />
+    <Compile Include="Enumerable\UnsignedRangeEnumerableTests.cs" />
+    <Compile Include="Enumerable\RangeEnumerableTests.cs" />
+    <Compile Include="Enumerable\UnsignedRangeEnumeratorTests.cs" />
+    <Compile Include="Enumerable\RangeEnumeratorTests.cs" />
     <Compile Include="Sort\CustomComparerTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests.cs" />
     <Compile Include="Functional\FunctionalExtensionsTests.cs" />
@@ -53,6 +57,7 @@
     <Compile Include="Enumerable\RangeTests.cs" />
     <Compile Include="Sort\SpecificOrderingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Subject.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ullet.PD\Ullet.PD.csproj">
