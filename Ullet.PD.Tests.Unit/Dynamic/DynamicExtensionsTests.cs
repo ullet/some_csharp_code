@@ -98,7 +98,7 @@ namespace Ullet.PD.Tests.Unit.Dynamic
       }
 
       [Test]
-      public void CountThrowsExceptionIfNotConvertableToInt()
+      public void CountThrowsExceptionIfNotConvertibleToInt()
       {
         var badCountable = new StringCountable {Count = "one"};
 

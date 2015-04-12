@@ -5,6 +5,7 @@
  */
 
 using System;
+using System.Globalization;
 using Ullet.PD.Enumerable;
 
 namespace Ullet.PD.Number
@@ -23,14 +24,41 @@ namespace Ullet.PD.Number
     /// Zero significant figures after decimal places will not be correctly
     /// displayed if simply call ToString() on the return value.
     /// </remarks>
-    public static decimal ToSignificantFigures(this decimal value, int figures)
+    public static decimal ToSignificantFigures(this decimal number, int figures)
     {
-      if (value == 0)
+      if (number == 0)
         return 0;
-      if (value < 0)
-        return -((-value).ToSignificantFigures(figures));
-      var shift = 1 + (int)Math.Floor(Math.Log10((double) value)) - figures;
-      return Math.Round(value.Shift(shift), 0).Shift(-shift);
+      var shift = 1 + MostSignificantDigitNumber(number) - figures;
+      return Math.Round(number.Shift(shift), 0).Shift(-shift);
+    }
+
+    /// <summary>
+    /// Convert number to string rounded to specified number of signifant
+    /// figures.
+    /// </summary>
+    public static string FormatToSignificantFigures(
+      this decimal number,
+      int figures,
+      IFormatProvider formatProvider = null)
+    {
+      var rounded = number.ToSignificantFigures(figures);
+      var decimalPlaces = 
+        Math.Max(0, figures - MostSignificantDigitNumber(rounded) - 1);
+      var formatString =
+        decimalPlaces == 0 ? "0" : "0." + new String('0', decimalPlaces);
+      return rounded.ToString(
+        formatString, 
+        formatProvider ?? CultureInfo.InvariantCulture);
+    }
+
+    // Digits numbered as:
+    // ...   2   1   0   -1   -2  ...
+    // ... 100s 10s 1s 1/10 1/100 ...
+    private static int MostSignificantDigitNumber(decimal number)
+    {
+      return number == 0
+        ? 0
+        : (int) Math.Floor(Math.Log10(Math.Abs((double) number)));
     }
 
     private static decimal Shift(this decimal value, int shift)
