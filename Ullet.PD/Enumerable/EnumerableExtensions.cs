@@ -190,10 +190,10 @@ namespace Ullet.PD.Enumerable
     /// Count sequence with greater than <see cref="Int32.MaxValue"/> items.
     /// </summary>
     /// <remarks>
-    /// Wil take relatively long time to count sequence has more than
+    /// Wil take relatively long time to count if sequence has more than
     /// <see cref="Int32.MaxValue"/> items.  If squence contains close to
     /// <see cref="Int64.MaxValue"/> items do not expect this function to return
-    /// any time within the life time of your civilisation.
+    /// any time within the life time of your civilization.
     /// </remarks>
     public static ulong BigCount<T>(
       this IEnumerable<T> source,
