@@ -4,7 +4,7 @@
  * UNLICENSE file accompanying this source code.
  */
 
-namespace Ullet.PD
+namespace Ullet.PD.Enumerable
 {
   /// <summary>
   /// Named item and index tuple.

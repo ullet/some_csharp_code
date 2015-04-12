@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Ullet.PD
+namespace Ullet.PD.Sort
 {
   /// <summary>
   /// Implementation of <see cref="IComparer{T}"/> that preferentially compares

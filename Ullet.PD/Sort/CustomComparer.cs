@@ -7,7 +7,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace Ullet.PD
+namespace Ullet.PD.Sort
 {
   /// <summary>
   /// Wraps a function delegate in a <see cref="IComparer{T}"/> instance to

@@ -8,8 +8,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using NUnit.Framework;
+using Ullet.PD.Sort;
 
-namespace Ullet.PD.Tests.Unit
+namespace Ullet.PD.Tests.Unit.Sort
 {
   [TestFixture]
   public class CustomComparerTests

@@ -6,8 +6,9 @@
 
 using System.Collections.Generic;
 using NUnit.Framework;
+using Ullet.PD.Sort;
 
-namespace Ullet.PD.Tests.Unit
+namespace Ullet.PD.Tests.Unit.Sort
 {
   [TestFixture]
   public class SpecificOrderingTests

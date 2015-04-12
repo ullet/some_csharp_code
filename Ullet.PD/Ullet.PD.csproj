@@ -44,17 +44,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DecrementingRangeEnumerable.cs" />
-    <Compile Include="DynamicExtensions.cs" />
-    <Compile Include="EnumerableExtensions.cs" />
-    <Compile Include="FunctionalExtensions.cs" />
-    <Compile Include="CustomComparer.cs" />
-    <Compile Include="IncrementingRangeEnumerable.cs" />
-    <Compile Include="ItemWithIndex.cs" />
-    <Compile Include="Range.cs" />
-    <Compile Include="RangeEnumerable.cs" />
-    <Compile Include="RangeEnumerator.cs" />
-    <Compile Include="SpecificOrdering.cs" />
+    <Compile Include="Enumerable\DecrementingRangeEnumerable.cs" />
+    <Compile Include="Dynamic\DynamicExtensions.cs" />
+    <Compile Include="Enumerable\EnumerableExtensions.cs" />
+    <Compile Include="Functional\FunctionalExtensions.cs" />
+    <Compile Include="Sort\CustomComparer.cs" />
+    <Compile Include="Enumerable\IncrementingRangeEnumerable.cs" />
+    <Compile Include="Enumerable\ItemWithIndex.cs" />
+    <Compile Include="Number\NumberExtensions.cs" />
+    <Compile Include="Enumerable\Range.cs" />
+    <Compile Include="Enumerable\RangeEnumerable.cs" />
+    <Compile Include="Enumerable\RangeEnumerator.cs" />
+    <Compile Include="Sort\SpecificOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

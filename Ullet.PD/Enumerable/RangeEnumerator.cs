@@ -8,7 +8,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 
-namespace Ullet.PD
+namespace Ullet.PD.Enumerable
 {
   /// <summary>
   /// Enumerator for a bounded sequence of incrementing or decrementing integer

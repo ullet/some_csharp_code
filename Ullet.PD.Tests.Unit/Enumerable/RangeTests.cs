@@ -6,8 +6,9 @@
 
 using System.Linq;
 using NUnit.Framework;
+using Ullet.PD.Enumerable;
 
-namespace Ullet.PD.Tests.Unit
+namespace Ullet.PD.Tests.Unit.Enumerable
 {
   [TestFixture]
   public class RangeTests

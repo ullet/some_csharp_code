@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ullet.PD
+namespace Ullet.PD.Enumerable
 {
   /// <summary>
   /// Generate enumerations of integer values over a range.

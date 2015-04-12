@@ -8,7 +8,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 
-namespace Ullet.PD
+namespace Ullet.PD.Enumerable
 {
   /// <summary>
   /// General extension methods for <see cref="IEnumerable{T}"/> and similar
@@ -132,6 +132,17 @@ namespace Ullet.PD
     {
       var index = 0;
       return source.Select(x => new ItemWithIndex<T>(x, index++));
+    }
+
+    /// <summary>
+    /// Calculate product of integer sequence.
+    /// </summary>
+    public static int Product(this IEnumerable<int> source)
+    {
+      if (source == null) throw new ArgumentNullException("source");
+      var items = source.ToArray();
+      if (!items.Any()) throw new ArgumentException("Sequence empty", "source");
+      return items.Aggregate(1, (a, v) => a * v);
     }
   }
 }

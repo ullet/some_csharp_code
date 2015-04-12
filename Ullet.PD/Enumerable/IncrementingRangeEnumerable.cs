@@ -6,7 +6,7 @@
 
 using System;
 
-namespace Ullet.PD
+namespace Ullet.PD.Enumerable
 {
   /// <summary>
   /// Enumerable of a bounded sequence of incrementing integer values.

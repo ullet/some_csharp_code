@@ -7,7 +7,7 @@
 using System;
 using Microsoft.CSharp.RuntimeBinder;
 
-namespace Ullet.PD
+namespace Ullet.PD.Dynamic
 {
   /// <summary>
   /// Object extension methods that rely on dynamic to assume exisitance of
@@ -23,7 +23,7 @@ namespace Ullet.PD
     /// </param>
     /// <typeparam name="T">
     /// Any non-dynamic non-anonymous public type that implements public
-    /// property Count.  Count will typically return <see cref="Int32"/> but
+    /// property Count.  Count will typically return <see cref="int"/> but
     /// can return any type comparable to Int32.
     /// </typeparam>
     /// <exception cref="RuntimeBinderException">
@@ -43,7 +43,7 @@ namespace Ullet.PD
     /// </param>
     /// <typeparam name="T">
     /// Any non-dynamic non-anonymous public type that implements public
-    /// property Count.  Count must return <see cref="Int32"/> or a type that
+    /// property Count.  Count must return <see cref="int"/> or a type that
     /// can be cast or converted to Int32.
     /// </typeparam>
     /// <exception cref="RuntimeBinderException">
@@ -53,6 +53,33 @@ namespace Ullet.PD
     public static int Count<T>(this T countable)
     {
       return (int)((dynamic)countable).Count;
+    }
+
+    /// <summary>
+    /// Raise value to non-negative power.
+    /// </summary>
+    /// <exception cref="OverflowException">
+    /// Thrown if <typeparamref name="T"/> is an integral type and result would
+    /// be greater than of maximum value for the type.
+    /// </exception>
+    /// <exception cref="RuntimeBinderException">
+    /// Thrown if:
+    /// <typeparamref name="T"/> is not convertible from integer value of 1, or;
+    /// <typeparamref name="T"/> does not implement the multiplication
+    /// operator (*).
+    /// </exception>
+    public static T RaiseToPower<T>(this T value, uint power)
+    {
+      checked
+      {
+        var v = (dynamic) value;
+
+        return power == 0
+          ? 1
+          : power == 1
+            ? v // save a recursive call
+            : v*((T) v).RaiseToPower(power - 1);
+      }
     }
   }
 }

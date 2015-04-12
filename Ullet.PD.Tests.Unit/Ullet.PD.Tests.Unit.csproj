@@ -45,12 +45,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DynamicExtensionsTests.cs" />
-    <Compile Include="CustomComparerTests.cs" />
-    <Compile Include="EnumerableExtensionsTests.cs" />
-    <Compile Include="FunctionalExtensionsTests.cs" />
-    <Compile Include="RangeTests.cs" />
-    <Compile Include="SpecificOrderingTests.cs" />
+    <Compile Include="Dynamic\DynamicExtensionsTests.cs" />
+    <Compile Include="Sort\CustomComparerTests.cs" />
+    <Compile Include="Enumerable\EnumerableExtensionsTests.cs" />
+    <Compile Include="Functional\FunctionalExtensionsTests.cs" />
+    <Compile Include="Number\NumberExtensionsTests.cs" />
+    <Compile Include="Enumerable\RangeTests.cs" />
+    <Compile Include="Sort\SpecificOrderingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
