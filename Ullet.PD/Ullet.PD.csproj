@@ -51,6 +51,7 @@
     <Compile Include="Enumerable\UnsignedIncrementingRangeEnumerable.cs" />
     <Compile Include="Enumerable\UnsignedRangeEnumerable.cs" />
     <Compile Include="Enumerable\UnsignedRangeEnumerator.cs" />
+    <Compile Include="Functional\Fn.cs" />
     <Compile Include="Functional\FunctionalExtensions.cs" />
     <Compile Include="Sort\CustomComparer.cs" />
     <Compile Include="Enumerable\IncrementingRangeEnumerable.cs" />
@@ -62,6 +63,7 @@
     <Compile Include="Sort\SpecificOrdering.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
