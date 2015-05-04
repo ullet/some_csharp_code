@@ -53,6 +53,9 @@
     <Compile Include="Enumerable\UnsignedRangeEnumerator.cs" />
     <Compile Include="Functional\Fn.cs" />
     <Compile Include="Functional\FunctionalExtensions.cs" />
+    <Compile Include="Functional\Just.cs" />
+    <Compile Include="Functional\Maybe.cs" />
+    <Compile Include="Functional\Nothing.cs" />
     <Compile Include="Sort\CustomComparer.cs" />
     <Compile Include="Enumerable\IncrementingRangeEnumerable.cs" />
     <Compile Include="Enumerable\ItemWithIndex.cs" />
