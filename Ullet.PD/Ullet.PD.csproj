@@ -51,6 +51,7 @@
     <Compile Include="Enumerable\UnsignedIncrementingRangeEnumerable.cs" />
     <Compile Include="Enumerable\UnsignedRangeEnumerable.cs" />
     <Compile Include="Enumerable\UnsignedRangeEnumerator.cs" />
+    <Compile Include="Functional\Ex.cs" />
     <Compile Include="Functional\Fn.cs" />
     <Compile Include="Functional\FunctionalExtensions.cs" />
     <Compile Include="Functional\Just.cs" />

@@ -50,8 +50,8 @@
     <Compile Include="Enumerable\RangeEnumerableTests.cs" />
     <Compile Include="Enumerable\UnsignedRangeEnumeratorTests.cs" />
     <Compile Include="Enumerable\RangeEnumeratorTests.cs" />
-    <Compile Include="Functional\FnTests\FuncExceptionHandlerTests.cs" />
-    <Compile Include="Functional\FnTests\ActionExceptionHandlerTests.cs" />
+    <Compile Include="Functional\ExTests\FuncExceptionHandlerTests.cs" />
+    <Compile Include="Functional\ExTests\ActionExceptionHandlerTests.cs" />
     <Compile Include="Sort\CustomComparerTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests.cs" />
     <Compile Include="Functional\FunctionalExtensionsTests.cs" />
