@@ -86,7 +86,8 @@
     <Compile Include="Enumerable\SignedRangeTests.cs" />
     <Compile Include="Sort\SpecificOrderingTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Subject.cs" />
+    <Compile Include="TestUtility\Subject.cs" />
+    <Compile Include="TestUtility\SubjectTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Ullet.PD\Ullet.PD.csproj">

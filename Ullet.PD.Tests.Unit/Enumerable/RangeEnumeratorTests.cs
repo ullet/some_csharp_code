@@ -9,6 +9,7 @@ using System.Collections;
 using System.Collections.Generic;
 using NUnit.Framework;
 using Ullet.PD.Enumerable;
+using Ullet.PD.Tests.Unit.TestUtility;
 
 namespace Ullet.PD.Tests.Unit.Enumerable
 {
