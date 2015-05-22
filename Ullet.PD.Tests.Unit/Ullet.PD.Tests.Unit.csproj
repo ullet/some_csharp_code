@@ -73,10 +73,15 @@
     <Compile Include="Enumerable\UnsignedRangeTests.cs" />
     <Compile Include="Functional\ExTests\FuncExceptionHandlerTests.cs" />
     <Compile Include="Functional\ExTests\ActionExceptionHandlerTests.cs" />
+    <Compile Include="Functional\FnTests\JustTests.cs" />
+    <Compile Include="Functional\FnTests\NestTests.cs" />
+    <Compile Include="Functional\FnTests\NothingTests.cs" />
     <Compile Include="Functional\FunctionalExtensionsTests\ComposeTests.cs" />
     <Compile Include="Functional\FunctionalExtensionsTests\CurryTests.cs" />
     <Compile Include="Functional\FunctionalExtensionsTests\FlipTests.cs" />
     <Compile Include="Functional\FunctionalExtensionsTests\PartialTests.cs" />
+    <Compile Include="Functional\JustTests.cs" />
+    <Compile Include="Functional\NothingTests.cs" />
     <Compile Include="Number\NumberExtensionsTests\RaiseToPowerTests.cs" />
     <Compile Include="Number\NumberExtensionsTests\ToSignificantFiguresTests.cs" />
     <Compile Include="Sort\CustomComparerTests.cs" />
