@@ -17,7 +17,7 @@ namespace Ullet.PD.Tests.Unit.Enumerable
     public void CanEnumerateRangeUpToValue()
     {
       Assert.That(
-        7U.UpTo(11U).ToArray(), 
+        7U.UpTo(11U).ToArray(),
         Is.EqualTo(new[] { 7U, 8U, 9U, 10U, 11U }));
     }
 

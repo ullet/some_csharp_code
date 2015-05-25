@@ -17,7 +17,7 @@ namespace Ullet.PD.Enumerable
   public static class EnumerableExtensions
   {
     /// <summary>
-    /// Append zero or more <paramref name="items"/> to end of 
+    /// Append zero or more <paramref name="items"/> to end of
     /// <paramref name="enumerable"/>.
     /// </summary>
     public static IEnumerable<T> Append<T>(

@@ -42,12 +42,12 @@ namespace Ullet.PD.Number
       IFormatProvider formatProvider = null)
     {
       var rounded = number.ToSignificantFigures(figures);
-      var decimalPlaces = 
+      var decimalPlaces =
         Math.Max(0, figures - MostSignificantDigitNumber(rounded) - 1);
       var formatString =
         decimalPlaces == 0 ? "0" : "0." + new String('0', decimalPlaces);
       return rounded.ToString(
-        formatString, 
+        formatString,
         formatProvider ?? CultureInfo.InvariantCulture);
     }
 

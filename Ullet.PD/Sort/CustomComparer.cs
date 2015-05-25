@@ -19,7 +19,7 @@ namespace Ullet.PD.Sort
    * It is not possible to create a class that implements IComparer<dynamic> but
    * it is possible to have an instance of IComparer<dynamic>.
    * Example:
-   *   var dynamicComparer = 
+   *   var dynamicComparer =
    *     CustomComparer.Create<dynamic>((x, y) => x.CompareTo(y));
    *   // Compare double to long: 1.234 is less than 2
    *   var result1 = dynamicComparer.Compare(1.234, 2L); // returns -1
