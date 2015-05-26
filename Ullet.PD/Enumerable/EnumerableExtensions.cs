@@ -204,5 +204,34 @@ namespace Ullet.PD.Enumerable
       filtered.Each((T x) => count++);
       return count;
     }
+
+    /// <summary>
+    /// Enumerate source passing previous, current, and next items to selector.
+    /// </summary>
+    /// <param name="source">Source enumerable.</param>
+    /// <param name="selector">
+    /// Function taking three <typeparamref name="TSource"/> parameters for
+    /// previous, current, and next items from source, and returning a value of
+    /// <typeparamref name="TResult"/>.
+    /// </param>
+    /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
+    public static IEnumerable<TResult> Select<TSource, TResult>(
+     this IEnumerable<TSource> source,
+     Func<TSource, TSource, TSource, TResult> selector)
+    {
+      var current = default(TSource);
+      var next = default(TSource);
+      var first = true;
+      foreach (var item in source.Append(default(TSource)))
+      {
+        var previous = current;
+        current = next;
+        next = item;
+        if (first)
+          first = false;
+        else
+          yield return selector(previous, current, next);
+      }
+    }
   }
 }

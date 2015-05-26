@@ -65,6 +65,7 @@
     <Compile Include="Enumerable\EnumerableExtensionsTests\ForEachWithIndexTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\ProductTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\RepeatTests.cs" />
+    <Compile Include="Enumerable\EnumerableExtensionsTests\SelectPreviousCurrentNextTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\WithIndexTests.cs" />
     <Compile Include="Enumerable\UnsignedRangeEnumerableTests.cs" />
     <Compile Include="Enumerable\RangeEnumerableTests.cs" />
