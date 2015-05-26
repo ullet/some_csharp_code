@@ -17,7 +17,7 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
     [Test]
     public void ReturnEmptyForEmptyInput()
     {
-      Assert.That(new object[]{}.Select((p, c, n) => 0), Is.Empty);
+      Assert.That(new object[] {}.Select((p, c, n) => 0), Is.Empty);
     }
 
     [Test]
@@ -47,7 +47,7 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
     [Test]
     public void NextNullForLastItemForReferenceType()
     {
-      var next = new[] { new object() }.Select((p, c, n) => n).First();
+      var next = new[] {new object()}.Select((p, c, n) => n).First();
 
       Assert.That(next, Is.Null);
     }
@@ -107,7 +107,7 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
     [Test]
     public void PreviousNullForFirstItemNullableType()
     {
-      var previous = new[] { (int?)7 }.Select((p, c, n) => p).First();
+      var previous = new[] {(int?) 7}.Select((p, c, n) => p).First();
 
       Assert.That(previous, Is.Null);
     }
@@ -115,7 +115,7 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
     [Test]
     public void NextNullForLastItemNullableType()
     {
-      var next = new[] { (int?)7 }.Select((p, c, n) => n).First();
+      var next = new[] {(int?) 7}.Select((p, c, n) => n).First();
 
       Assert.That(next, Is.Null);
     }
@@ -123,7 +123,7 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
     [Test]
     public void PreviousDefaultValueForFirstItemValueType()
     {
-      var previous = new[] { 7 }.Select((p, c, n) => p).First();
+      var previous = new[] {7}.Select((p, c, n) => p).First();
 
       Assert.That(previous, Is.EqualTo(default(Int32)));
     }
@@ -131,7 +131,7 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
     [Test]
     public void NextDefaultValueForLastItemValueType()
     {
-      var next = new[] { 7 }.Select((p, c, n) => n).First();
+      var next = new[] {7}.Select((p, c, n) => n).First();
 
       Assert.That(next, Is.EqualTo(default(Int32)));
     }

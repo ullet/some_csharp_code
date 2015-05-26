@@ -216,8 +216,8 @@ namespace Ullet.PD.Enumerable
     /// </param>
     /// <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
     public static IEnumerable<TResult> Select<TSource, TResult>(
-     this IEnumerable<TSource> source,
-     Func<TSource, TSource, TSource, TResult> selector)
+      this IEnumerable<TSource> source,
+      Func<TSource, TSource, TSource, TResult> selector)
     {
       var previous = default(TSource);
       var current = default(TSource);
