@@ -219,18 +219,17 @@ namespace Ullet.PD.Enumerable
      this IEnumerable<TSource> source,
      Func<TSource, TSource, TSource, TResult> selector)
     {
+      var previous = default(TSource);
       var current = default(TSource);
-      var next = default(TSource);
       var first = true;
-      foreach (var item in source.Append(default(TSource)))
+      foreach (var next in source.Append(default(TSource)))
       {
-        var previous = current;
-        current = next;
-        next = item;
         if (first)
           first = false;
         else
           yield return selector(previous, current, next);
+        previous = current;
+        current = next;
       }
     }
   }
