@@ -59,6 +59,7 @@
     <Compile Include="Dynamic\DynamicExtensionsTests\RaiseToPowerTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\AppendTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\CheckedProductTests.cs" />
+    <Compile Include="Enumerable\EnumerableExtensionsTests\DistinctByTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\EachTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\EachWithIndexTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\ForEachTests.cs" />

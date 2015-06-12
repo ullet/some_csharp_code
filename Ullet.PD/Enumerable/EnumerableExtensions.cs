@@ -232,5 +232,22 @@ namespace Ullet.PD.Enumerable
         current = next;
       }
     }
+
+    /// <summary>
+    /// Select distinct items using keySelector delegate.  Two items with same
+    /// key are considered equivalent.  Only the first item in the sequence with
+    /// a given key is retained.
+    /// </summary>
+    /// <param name="source">Source enumerable.</param>
+    /// <param name="keySelector">
+    /// Function selecting key used to test items for distinctness.
+    /// </param>
+    /// <returns>Enumerable retaining only distinct items.</returns>
+    public static IEnumerable<T> DistinctBy<T, TKey>(
+      this IEnumerable<T> source, Func<T, TKey> keySelector)
+    {
+      var distinctKeys = new HashSet<TKey>();
+      return source.Where(item => distinctKeys.Add(keySelector(item)));
+    }
   }
 }
