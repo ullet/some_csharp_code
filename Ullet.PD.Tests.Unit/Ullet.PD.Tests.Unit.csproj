@@ -62,6 +62,8 @@
     <Compile Include="Enumerable\EnumerableExtensionsTests\DistinctByTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\EachTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\EachWithIndexTests.cs" />
+    <Compile Include="Enumerable\EnumerableExtensionsTests\EachWithObjectTests.cs" />
+    <Compile Include="Enumerable\EnumerableExtensionsTests\ForEachWithObjectTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\ForEachTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\ForEachWithIndexTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\ProductTests.cs" />

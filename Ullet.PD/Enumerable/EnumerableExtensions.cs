@@ -57,6 +57,22 @@ namespace Ullet.PD.Enumerable
     }
 
     /// <summary>
+    /// Perform specified action on each item in <paramref name="source"/> and
+    /// the passed in <typeparamref name="TObj"/> instance.
+    /// </summary>
+    /// <returns>Returns original object reference.</returns>
+    /// <remarks>
+    /// Referenced object could be mutated by the specified action.  A typical
+    /// use of ForEach with an object is to construct an aggregate object by
+    /// iterating over the source.
+    /// </remarks>
+    public static TObj ForEach<T, TObj>(
+      this IEnumerable<T> source, TObj o, Action<T, TObj> action)
+    {
+      return source.ForEachWithObject(o, action);
+    }
+
+    /// <summary>
     /// Perform specified action on each item in <paramref name="enumerable"/>.
     /// </summary>
     public static void Each<T>(this IEnumerable<T> enumerable, Action<T> action)
@@ -82,6 +98,22 @@ namespace Ullet.PD.Enumerable
       this IEnumerable<T> enumerable, Action<ItemWithIndex<T>> action)
     {
       enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="source"/> and
+    /// the passed in <typeparamref name="TObj"/> instance.
+    /// </summary>
+    /// <returns>Returns original object reference.</returns>
+    /// <remarks>
+    /// Referenced object could be mutated by the specified action.  A typical
+    /// use of Each with an object is to construct an aggregate object by
+    /// iterating over the source.
+    /// </remarks>
+    public static TObj Each<T, TObj>(
+      this IEnumerable<T> source, TObj o, Action<T, TObj> action)
+    {
+      return source.ForEachWithObject(o, action);
     }
 
     /// <summary>
@@ -122,6 +154,39 @@ namespace Ullet.PD.Enumerable
       this IEnumerable<T> enumerable, Action<ItemWithIndex<T>> action)
     {
       enumerable.ForEachWithIndex(action);
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="source"/> and
+    /// the passed in <typeparamref name="TObj"/> instance.
+    /// </summary>
+    /// <returns>Returns original object reference.</returns>
+    /// <remarks>
+    /// Referenced object could be mutated by the specified action.  A typical
+    /// use of ForEachWithObject is to construct an aggregate object by
+    /// iterating over the source.
+    /// </remarks>
+    public static TObj ForEachWithObject<T, TObj>(
+      this IEnumerable<T> source, TObj o, Action<T, TObj> action)
+    {
+      source.ForEach(x => action(x, o));
+      return o;
+    }
+
+    /// <summary>
+    /// Perform specified action on each item in <paramref name="source"/> and
+    /// the passed in <typeparamref name="TObj"/> instance.
+    /// </summary>
+    /// <returns>Returns original object reference.</returns>
+    /// <remarks>
+    /// Referenced object could be mutated by the specified action.  A typical
+    /// use of EachWithObject is to construct an aggregate object by  iterating
+    /// over the source.
+    /// </remarks>
+    public static TObj EachWithObject<T, TObj>(
+      this IEnumerable<T> source, TObj o, Action<T, TObj> action)
+    {
+      return source.ForEachWithObject(o, action);
     }
 
     /// <summary>

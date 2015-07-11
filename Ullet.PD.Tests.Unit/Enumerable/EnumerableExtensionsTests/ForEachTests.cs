@@ -60,5 +60,57 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
       Assert.That(enumeratedItems.ToArray(), Is.EqualTo(enumerable));
       Assert.That(enumeratedIndexes.ToArray(), Is.EqualTo(new[] {0, 1, 2}));
     }
+
+    [Test]
+    public void WithObject_EnumeratesAllItems()
+    {
+      var list = new List<int> {3, 6, 1, 8};
+      var enumerated = new List<int>();
+
+      list.ForEach(new object(), (x, o) => enumerated.Add(x));
+
+      Assert.That(enumerated, Is.EqualTo(list));
+    }
+
+    [Test]
+    public void WithObject_ObjectCanBeNull()
+    {
+      var list = new List<int> { 3, 6, 1, 8 };
+
+      Assert.DoesNotThrow(() => list.ForEach((object) null, (x, o) => { }));
+    }
+
+    [Test]
+    public void WithObject_InputObjectUsedWithAllItems()
+    {
+      var list = new List<int> { 3, 6, 1, 8 };
+      var inputObject = new object();
+      var usedObjects = new List<object>();
+
+      list.ForEach(inputObject, (x, o) => usedObjects.Add(o));
+
+      Assert.That(usedObjects, Has.All.SameAs(inputObject));
+    }
+
+    [Test]
+    public void WithObject_ReturnsInputObject()
+    {
+      var list = new List<int> { 3, 6, 1, 8 };
+      var inputObject = new object();
+
+      var returnedObject = list.ForEach(inputObject, (x, o) => { });
+
+      Assert.That(returnedObject, Is.SameAs(inputObject));
+    }
+
+    [Test]
+    public void WithObject_ActionCanMutateObject()
+    {
+      var list = new List<int> { 3, 6, 1, 8 };
+
+      var collected = list.ForEach(new List<int>(), (x, o) => o.Add(x));
+
+      Assert.That(collected, Is.EqualTo(list));
+    }
   }
 }
