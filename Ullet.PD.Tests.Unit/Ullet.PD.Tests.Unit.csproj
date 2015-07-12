@@ -88,6 +88,7 @@
     <Compile Include="Functional\NothingTests.cs" />
     <Compile Include="Number\NumberExtensionsTests\RaiseToPowerTests.cs" />
     <Compile Include="Number\NumberExtensionsTests\ToSignificantFiguresTests.cs" />
+    <Compile Include="Generic\MutableTests.cs" />
     <Compile Include="Sort\CustomComparerTests.cs" />
     <Compile Include="Enumerable\EnumerableExtensionsTests\BigCountTests.cs" />
     <Compile Include="Functional\FnTests\UncurryTests.cs" />

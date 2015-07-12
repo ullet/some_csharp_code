@@ -61,6 +61,7 @@
     <Compile Include="Functional\Just.cs" />
     <Compile Include="Functional\Maybe.cs" />
     <Compile Include="Functional\Nothing.cs" />
+    <Compile Include="Generic\Mutable.cs" />
     <Compile Include="Sort\CustomComparer.cs" />
     <Compile Include="Enumerable\IncrementingRangeEnumerable.cs" />
     <Compile Include="Enumerable\ItemWithIndex.cs" />
