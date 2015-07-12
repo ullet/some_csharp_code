@@ -22,7 +22,8 @@ namespace Ullet.PD.Tests.Unit.Enumerable.EnumerableExtensionsTests
     [Test]
     public void NullSequenceThrowsException()
     {
-      Assert.Throws<NullReferenceException>(
+      Assert.Throws(
+        Is.InstanceOf<Exception>(),
         () => ((object[]) null).BigCount());
     }
 
