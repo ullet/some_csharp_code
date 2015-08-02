@@ -85,6 +85,7 @@
     <Compile Include="Functional\FnTests\FlipTests.cs" />
     <Compile Include="Functional\FnTests\PartialTests.cs" />
     <Compile Include="Functional\JustTests.cs" />
+    <Compile Include="Functional\MatchTests\MatchValueTests.cs" />
     <Compile Include="Functional\NothingTests.cs" />
     <Compile Include="Generic\DefaultDictionaryTests.cs" />
     <Compile Include="Generic\MaybeDictionaryTests.cs" />

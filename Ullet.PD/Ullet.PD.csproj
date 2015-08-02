@@ -59,6 +59,8 @@
     <Compile Include="Functional\Fn_Nest.cs" />
     <Compile Include="Functional\Fn_Partial.cs" />
     <Compile Include="Functional\Just.cs" />
+    <Compile Include="Functional\Match.cs" />
+    <Compile Include="Functional\Matcher.cs" />
     <Compile Include="Functional\Maybe.cs" />
     <Compile Include="Functional\Nothing.cs" />
     <Compile Include="Generic\DefaultDictionary.cs" />
