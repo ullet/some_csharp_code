@@ -64,7 +64,7 @@
     <Compile Include="Functional\Maybe.cs" />
     <Compile Include="Functional\Nothing.cs" />
     <Compile Include="Generic\DefaultDictionary.cs" />
-    <Compile Include="Generic\MaybeDictionary.cs" />
+    <Compile Include="Functional\MaybeDictionary.cs" />
     <Compile Include="Generic\Mutable.cs" />
     <Compile Include="Sort\CustomComparer.cs" />
     <Compile Include="Enumerable\IncrementingRangeEnumerable.cs" />

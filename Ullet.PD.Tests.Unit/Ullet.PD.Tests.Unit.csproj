@@ -88,7 +88,7 @@
     <Compile Include="Functional\MatchTests\MatchValueTests.cs" />
     <Compile Include="Functional\NothingTests.cs" />
     <Compile Include="Generic\DefaultDictionaryTests.cs" />
-    <Compile Include="Generic\MaybeDictionaryTests.cs" />
+    <Compile Include="Functional\MaybeDictionaryTests.cs" />
     <Compile Include="Number\NumberExtensionsTests\RaiseToPowerTests.cs" />
     <Compile Include="Number\NumberExtensionsTests\ToSignificantFiguresTests.cs" />
     <Compile Include="Generic\MutableTests.cs" />

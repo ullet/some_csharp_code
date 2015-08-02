@@ -6,9 +6,8 @@
 
 using System.Collections;
 using System.Collections.Generic;
-using Ullet.PD.Functional;
 
-namespace Ullet.PD.Generic
+namespace Ullet.PD.Functional
 {
   /// <summary>
   /// Dictionary of keys and values returning <see cref="T:Maybe{TValue}"/> from
