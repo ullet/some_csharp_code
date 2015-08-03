@@ -1,0 +1,117 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.40629.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "_SolutionItems", "_SolutionItems", "{C22435E3-307D-4AF3-A390-43D39121F570}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+		UNLICENSE = UNLICENSE
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Dynamic", "Ullet\Strix\Dynamic\Ullet.Strix.Dynamic.csproj", "{758106CA-42FB-4ECB-B9F6-72954962DD28}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Enumerable", "Ullet\Strix\Enumerable\Ullet.Strix.Enumerable.csproj", "{EC7308BF-8BB9-42D2-9B51-220284CC936E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Functional", "Ullet\Strix\Functional\Ullet.Strix.Functional.csproj", "{CBE35F08-89AC-4411-9498-3B643E1783FE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Generic", "Ullet\Strix\Generic\Ullet.Strix.Generic.csproj", "{63CF2D66-9C38-4D0F-B626-CF5D54DB7610}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Number", "Ullet\Strix\Number\Ullet.Strix.Number.csproj", "{FC3086BC-C9E8-4F2D-B60C-CB90455C4628}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Sort", "Ullet\Strix\Sort\Ullet.Strix.Sort.csproj", "{2B17960B-88AC-479A-9C39-17F2E4FB48D0}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{63B2335E-537F-4DA9-B34F-895F92041850}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Dynamic.Tests.Unit", "Ullet\Strix\Tests\Unit\Dynamic\Ullet.Strix.Dynamic.Tests.Unit.csproj", "{76EBC04F-373B-4DFD-A9E0-65A4D4AD3E30}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Enumerable.Tests.Unit", "Ullet\Strix\Tests\Unit\Enumerable\Ullet.Strix.Enumerable.Tests.Unit.csproj", "{0DFA5C43-5171-40D4-9C24-17137F55A96D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Functional.Tests.Unit", "Ullet\Strix\Tests\Unit\Functional\Ullet.Strix.Functional.Tests.Unit.csproj", "{6B075B3C-D0E4-441C-B2E2-DC4B237EEAAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Generic.Tests.Unit", "Ullet\Strix\Tests\Unit\Generic\Ullet.Strix.Generic.Tests.Unit.csproj", "{F0735966-9A35-4C24-B59C-571E4F4AA173}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Number.Tests.Unit", "Ullet\Strix\Tests\Unit\Number\Ullet.Strix.Number.Tests.Unit.csproj", "{854BAC9B-277C-41F6-A365-CE540A39C0D2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Sort.Tests.Unit", "Ullet\Strix\Tests\Unit\Sort\Ullet.Strix.Sort.Tests.Unit.csproj", "{A1C7EDC4-BBAF-495C-9EB0-BF67F30D27EF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Testing", "Ullet\Strix\Testing\Ullet.Strix.Testing.csproj", "{0F0778A9-F4A9-406A-B905-6A5A5B43FD69}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Ullet.Strix.Testing.Tests.Unit", "Ullet\Strix\Tests\Unit\Testing\Ullet.Strix.Testing.Tests.Unit.csproj", "{40E4266C-2C9C-4E29-856E-03B67336CF67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{758106CA-42FB-4ECB-B9F6-72954962DD28}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{758106CA-42FB-4ECB-B9F6-72954962DD28}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{758106CA-42FB-4ECB-B9F6-72954962DD28}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{758106CA-42FB-4ECB-B9F6-72954962DD28}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EC7308BF-8BB9-42D2-9B51-220284CC936E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EC7308BF-8BB9-42D2-9B51-220284CC936E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EC7308BF-8BB9-42D2-9B51-220284CC936E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EC7308BF-8BB9-42D2-9B51-220284CC936E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CBE35F08-89AC-4411-9498-3B643E1783FE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CBE35F08-89AC-4411-9498-3B643E1783FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CBE35F08-89AC-4411-9498-3B643E1783FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CBE35F08-89AC-4411-9498-3B643E1783FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63CF2D66-9C38-4D0F-B626-CF5D54DB7610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63CF2D66-9C38-4D0F-B626-CF5D54DB7610}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63CF2D66-9C38-4D0F-B626-CF5D54DB7610}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63CF2D66-9C38-4D0F-B626-CF5D54DB7610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FC3086BC-C9E8-4F2D-B60C-CB90455C4628}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FC3086BC-C9E8-4F2D-B60C-CB90455C4628}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FC3086BC-C9E8-4F2D-B60C-CB90455C4628}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FC3086BC-C9E8-4F2D-B60C-CB90455C4628}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B17960B-88AC-479A-9C39-17F2E4FB48D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B17960B-88AC-479A-9C39-17F2E4FB48D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B17960B-88AC-479A-9C39-17F2E4FB48D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B17960B-88AC-479A-9C39-17F2E4FB48D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{76EBC04F-373B-4DFD-A9E0-65A4D4AD3E30}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{76EBC04F-373B-4DFD-A9E0-65A4D4AD3E30}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{76EBC04F-373B-4DFD-A9E0-65A4D4AD3E30}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{76EBC04F-373B-4DFD-A9E0-65A4D4AD3E30}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0DFA5C43-5171-40D4-9C24-17137F55A96D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0DFA5C43-5171-40D4-9C24-17137F55A96D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0DFA5C43-5171-40D4-9C24-17137F55A96D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0DFA5C43-5171-40D4-9C24-17137F55A96D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6B075B3C-D0E4-441C-B2E2-DC4B237EEAAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6B075B3C-D0E4-441C-B2E2-DC4B237EEAAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6B075B3C-D0E4-441C-B2E2-DC4B237EEAAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6B075B3C-D0E4-441C-B2E2-DC4B237EEAAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F0735966-9A35-4C24-B59C-571E4F4AA173}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F0735966-9A35-4C24-B59C-571E4F4AA173}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F0735966-9A35-4C24-B59C-571E4F4AA173}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F0735966-9A35-4C24-B59C-571E4F4AA173}.Release|Any CPU.Build.0 = Release|Any CPU
+		{854BAC9B-277C-41F6-A365-CE540A39C0D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{854BAC9B-277C-41F6-A365-CE540A39C0D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{854BAC9B-277C-41F6-A365-CE540A39C0D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{854BAC9B-277C-41F6-A365-CE540A39C0D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A1C7EDC4-BBAF-495C-9EB0-BF67F30D27EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A1C7EDC4-BBAF-495C-9EB0-BF67F30D27EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A1C7EDC4-BBAF-495C-9EB0-BF67F30D27EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A1C7EDC4-BBAF-495C-9EB0-BF67F30D27EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0F0778A9-F4A9-406A-B905-6A5A5B43FD69}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F0778A9-F4A9-406A-B905-6A5A5B43FD69}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F0778A9-F4A9-406A-B905-6A5A5B43FD69}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F0778A9-F4A9-406A-B905-6A5A5B43FD69}.Release|Any CPU.Build.0 = Release|Any CPU
+		{40E4266C-2C9C-4E29-856E-03B67336CF67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{40E4266C-2C9C-4E29-856E-03B67336CF67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{40E4266C-2C9C-4E29-856E-03B67336CF67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{40E4266C-2C9C-4E29-856E-03B67336CF67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{76EBC04F-373B-4DFD-A9E0-65A4D4AD3E30} = {63B2335E-537F-4DA9-B34F-895F92041850}
+		{0DFA5C43-5171-40D4-9C24-17137F55A96D} = {63B2335E-537F-4DA9-B34F-895F92041850}
+		{6B075B3C-D0E4-441C-B2E2-DC4B237EEAAF} = {63B2335E-537F-4DA9-B34F-895F92041850}
+		{F0735966-9A35-4C24-B59C-571E4F4AA173} = {63B2335E-537F-4DA9-B34F-895F92041850}
+		{854BAC9B-277C-41F6-A365-CE540A39C0D2} = {63B2335E-537F-4DA9-B34F-895F92041850}
+		{A1C7EDC4-BBAF-495C-9EB0-BF67F30D27EF} = {63B2335E-537F-4DA9-B34F-895F92041850}
+		{40E4266C-2C9C-4E29-856E-03B67336CF67} = {63B2335E-537F-4DA9-B34F-895F92041850}
+	EndGlobalSection
+EndGlobal
