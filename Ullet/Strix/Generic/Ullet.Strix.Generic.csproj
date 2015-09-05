@@ -41,6 +41,7 @@
   <ItemGroup>
     <Compile Include="DefaultDictionary.cs" />
     <Compile Include="Mutable.cs" />
+    <Compile Include="GeneralExtensions.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
