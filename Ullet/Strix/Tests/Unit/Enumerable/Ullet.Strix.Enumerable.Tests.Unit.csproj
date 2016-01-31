@@ -56,7 +56,6 @@
     <Compile Include="EnumerableExtensionsTests\ProductTests.cs" />
     <Compile Include="EnumerableExtensionsTests\RepeatTests.cs" />
     <Compile Include="EnumerableExtensionsTests\SelectPreviousCurrentNextTests.cs" />
-    <Compile Include="EnumerableExtensionsTests\WithIndexTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RangeEnumerableTests.cs" />
     <Compile Include="RangeEnumeratorTests.cs" />

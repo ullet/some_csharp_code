@@ -42,7 +42,6 @@
     <Compile Include="DecrementingRangeEnumerable.cs" />
     <Compile Include="EnumerableExtensions.cs" />
     <Compile Include="IncrementingRangeEnumerable.cs" />
-    <Compile Include="ItemWithIndex.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Range.cs" />
     <Compile Include="RangeEnumerable.cs" />

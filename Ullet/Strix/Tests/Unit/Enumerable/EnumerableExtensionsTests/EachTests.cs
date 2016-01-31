@@ -1,5 +1,5 @@
 /*
- * Written by Trevor Barnett, <mr.ullet@gmail.com>, 2015
+ * Written by Trevor Barnett, <mr.ullet@gmail.com>, 2015, 2016
  * Released to the Public Domain.  See http://unlicense.org/ or the
  * UNLICENSE file accompanying this source code.
  */
@@ -25,24 +25,6 @@ namespace Ullet.Strix.Enumerable.Tests.Unit.EnumerableExtensionsTests
     }
 
     [Test]
-    public void EachHasOverloadTakingActionOfItemWithIndex()
-    {
-      IEnumerable<int> enumerable = new[] {1, 2, 3};
-      var enumeratedItems = new List<int>();
-      var enumeratedIndexes = new List<int>();
-
-      enumerable.Each(
-        o =>
-        {
-          enumeratedIndexes.Add(o.Index);
-          enumeratedItems.Add(o.Item);
-        });
-
-      Assert.That(enumeratedItems.ToArray(), Is.EqualTo(enumerable));
-      Assert.That(enumeratedIndexes.ToArray(), Is.EqualTo(new[] {0, 1, 2}));
-    }
-
-    [Test]
     public void EachHasWithIndexOverload()
     {
       IEnumerable<int> enumerable = new[] {1, 2, 3};
@@ -50,10 +32,10 @@ namespace Ullet.Strix.Enumerable.Tests.Unit.EnumerableExtensionsTests
       var enumeratedIndexes = new List<int>();
 
       enumerable.Each(
-        (i, x) =>
+        (t, i) =>
         {
+          enumeratedItems.Add(t);
           enumeratedIndexes.Add(i);
-          enumeratedItems.Add(x);
         });
 
       Assert.That(enumeratedItems.ToArray(), Is.EqualTo(enumerable));

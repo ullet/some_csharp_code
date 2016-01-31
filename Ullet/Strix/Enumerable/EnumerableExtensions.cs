@@ -1,5 +1,5 @@
 ﻿/*
- * Written by Trevor Barnett, <mr.ullet@gmail.com>, 2015
+ * Written by Trevor Barnett, <mr.ullet@gmail.com>, 2015, 2016
  * Released to the Public Domain.  See http://unlicense.org/ or the
  * UNLICENSE file accompanying this source code.
  */
@@ -40,17 +40,7 @@ namespace Ullet.Strix.Enumerable
     /// along with each items index within the enumeration.
     /// </summary>
     public static void ForEach<T>(
-      this IEnumerable<T> source, Action<int, T> action)
-    {
-      source.ForEachWithIndex(action);
-    }
-
-    /// <summary>
-    /// Perform specified action on each indexed item in
-    /// <paramref name="source"/>.
-    /// </summary>
-    public static void ForEach<T>(
-      this IEnumerable<T> source, Action<ItemWithIndex<T>> action)
+      this IEnumerable<T> source, Action<T, int> action)
     {
       source.ForEachWithIndex(action);
     }
@@ -84,17 +74,7 @@ namespace Ullet.Strix.Enumerable
     /// along with each items index within the enumeration.
     /// </summary>
     public static void Each<T>(
-      this IEnumerable<T> source, Action<int, T> action)
-    {
-      source.ForEachWithIndex(action);
-    }
-
-    /// <summary>
-    /// Perform specified action on each indexed item in
-    /// <paramref name="source"/>.
-    /// </summary>
-    public static void Each<T>(
-      this IEnumerable<T> source, Action<ItemWithIndex<T>> action)
+      this IEnumerable<T> source, Action<T, int> action)
     {
       source.ForEachWithIndex(action);
     }
@@ -120,19 +100,9 @@ namespace Ullet.Strix.Enumerable
     /// along with each items index within the enumeration.
     /// </summary>
     public static void ForEachWithIndex<T>(
-      this IEnumerable<T> source, Action<int, T> action)
+      this IEnumerable<T> source, Action<T, int> action)
     {
-      source.ForEachWithIndex(x => action(x.Index, x.Item));
-    }
-
-    /// <summary>
-    /// Perform specified action on each indexed item in
-    /// <paramref name="source"/>.
-    /// </summary>
-    public static void ForEachWithIndex<T>(
-      this IEnumerable<T> source, Action<ItemWithIndex<T>> action)
-    {
-      source.WithIndex().ForEach(action);
+      source.Select((t, i) => new{t,i}).ForEach(it => action(it.t, it.i));
     }
 
     /// <summary>
@@ -140,17 +110,7 @@ namespace Ullet.Strix.Enumerable
     /// along with each items index within the enumeration.
     /// </summary>
     public static void EachWithIndex<T>(
-      this IEnumerable<T> source, Action<int, T> action)
-    {
-      source.ForEachWithIndex(action);
-    }
-
-    /// <summary>
-    /// Perform specified action on each indexed item in
-    /// <paramref name="source"/>.
-    /// </summary>
-    public static void EachWithIndex<T>(
-      this IEnumerable<T> source, Action<ItemWithIndex<T>> action)
+      this IEnumerable<T> source, Action<T, int> action)
     {
       source.ForEachWithIndex(action);
     }
@@ -186,17 +146,6 @@ namespace Ullet.Strix.Enumerable
       this IEnumerable<T> source, TObj o, Action<T, TObj> action)
     {
       return source.ForEachWithObject(o, action);
-    }
-
-    /// <summary>
-    /// Map items in source to a <see cref="ItemWithIndex{T}"/> tuple
-    /// pairing each item with its index within the enumeration.
-    /// </summary>
-    public static IEnumerable<ItemWithIndex<T>> WithIndex<T>(
-      this IEnumerable<T> source)
-    {
-      var index = 0;
-      return source.Select(x => new ItemWithIndex<T>(x, index++));
     }
 
     /// <summary>
