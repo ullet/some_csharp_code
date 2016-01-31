@@ -1,5 +1,5 @@
 ﻿/*
- * Written by Trevor Barnett, <mr.ullet@gmail.com>, 2015
+ * Written by Trevor Barnett, <mr.ullet@gmail.com>, 2015, 2016
  * Released to the Public Domain.  See http://unlicense.org/ or the
  * UNLICENSE file accompanying this source code.
  */
@@ -28,7 +28,19 @@ namespace Ullet.Strix.Generic.Tests.Unit.GeneralExtensionsTests
     public void CanUseMutateAsAnInitializer()
     {
       var o = new ExampleClass().Mutate(x => x.SomeValue = 123);
+
       Assert.That(o.SomeValue, Is.EqualTo(123));
+    }
+
+    [Test]
+    public void ExecuteIsAliasForMutate()
+    {
+      const string obj = "some object";
+      string actionCalledOn = null;
+
+      obj.Execute(o => actionCalledOn = o);
+
+      Assert.That(actionCalledOn, Is.SameAs(obj));
     }
 
     private class ExampleClass
