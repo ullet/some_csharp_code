@@ -6,8 +6,8 @@
 
 using System.Collections;
 using System.Collections.Generic;
+using System.Linq;
 using NUnit.Framework;
-using Ullet.Strix.Enumerable;
 
 namespace Ullet.Strix.Dynamic.Tests.Unit.DynamicExtensionsTests
 {
@@ -54,7 +54,7 @@ namespace Ullet.Strix.Dynamic.Tests.Unit.DynamicExtensionsTests
 
       public int Value
       {
-        get { return _values.Product(); }
+        get { return _values.Aggregate(0, (a,n) => a*n); }
       }
 
       public static CompatibleCustomType operator *(

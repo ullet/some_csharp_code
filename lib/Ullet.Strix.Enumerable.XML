@@ -1,0 +1,541 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Ullet.Strix.Enumerable</name>
+    </assembly>
+    <members>
+        <member name="T:Ullet.Strix.Enumerable.DecrementingRangeEnumerable">
+            <summary>
+            Enumerable of a bounded sequence of decrementing integer values.
+            </summary>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.RangeEnumerable">
+            <summary>
+            Enumerable of a bounded sequence of incrementing or decrementing integer
+            values.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerable.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Initialize a new range enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerable.From(System.Int32)">
+            <summary>
+            Set starting value of the enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerable.To(System.Int32)">
+            <summary>
+            Set final/terminating value of the enumeration.
+            </summary>
+            <remarks>
+            This value may not be in the enumeration if <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> is set to
+            a non-unit value.  Enumeration terminates at a value not greater than
+            this upper bound (or less than this lower bound if negative step).
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)">
+            <summary>
+            Value to increment successive values in the range sequence.  Negative
+            value will produce a decrementing sequence.  <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.From(System.Int32)"/> must be
+            less than or equal to <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.To(System.Int32)"/> is <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> is a
+            positive value.  <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.From(System.Int32)"/> must be
+            greater than or equal to <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.To(System.Int32)"/> is <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> is a
+            negative value.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerable.GetEnumerator">
+            <summary>
+            Get enumerator for this enumerable.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.DecrementingRangeEnumerable.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Initialize a new decrementing range enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.DecrementingRangeEnumerable.Step(System.Int32)">
+            <summary>
+            Value to decrement successive values in the range sequence.  Positive
+            and negative values are regarded as equivalent, both specifying the
+            absolute decrement value.
+            </summary>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.EnumerableExtensions">
+            <summary>
+            General extension methods for <see cref="T:System.Collections.Generic.IEnumerable`1"/> and similar
+            "enumerable" types.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Append``1(System.Collections.Generic.IEnumerable{``0},``0[])">
+            <summary>
+            Append zero or more <paramref name="items"/> to end of
+            <paramref name="source"/>.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/>.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.ForEach``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/>
+            along with each items index within the enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.ForEach``2(System.Collections.Generic.IEnumerable{``0},``1,System.Action{``0,``1})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/> and
+            the passed in <typeparamref name="TObj"/> instance.
+            </summary>
+            <returns>Returns original object reference.</returns>
+            <remarks>
+            Referenced object could be mutated by the specified action.  A typical
+            use of ForEach with an object is to construct an aggregate object by
+            iterating over the source.
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/>.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Each``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/>
+            along with each items index within the enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Each``2(System.Collections.Generic.IEnumerable{``0},``1,System.Action{``0,``1})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/> and
+            the passed in <typeparamref name="TObj"/> instance.
+            </summary>
+            <returns>Returns original object reference.</returns>
+            <remarks>
+            Referenced object could be mutated by the specified action.  A typical
+            use of Each with an object is to construct an aggregate object by
+            iterating over the source.
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.ForEachWithIndex``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/>
+            along with each items index within the enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.EachWithIndex``1(System.Collections.Generic.IEnumerable{``0},System.Action{``0,System.Int32})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/>
+            along with each items index within the enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.ForEachWithObject``2(System.Collections.Generic.IEnumerable{``0},``1,System.Action{``0,``1})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/> and
+            the passed in <typeparamref name="TObj"/> instance.
+            </summary>
+            <returns>Returns original object reference.</returns>
+            <remarks>
+            Referenced object could be mutated by the specified action.  A typical
+            use of ForEachWithObject is to construct an aggregate object by
+            iterating over the source.
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.EachWithObject``2(System.Collections.Generic.IEnumerable{``0},``1,System.Action{``0,``1})">
+            <summary>
+            Perform specified action on each item in <paramref name="source"/> and
+            the passed in <typeparamref name="TObj"/> instance.
+            </summary>
+            <returns>Returns original object reference.</returns>
+            <remarks>
+            Referenced object could be mutated by the specified action.  A typical
+            use of EachWithObject is to construct an aggregate object by  iterating
+            over the source.
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Product(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Calculate product of integer sequence.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.CheckedProduct(System.Collections.Generic.IEnumerable{System.Int32})">
+            <summary>
+            Calculate product of integer sequence with overflow checking.
+            </summary>
+            <exception cref="T:System.OverflowException">
+            Thrown if result would be greater than of <see cref="F:System.Int32.MaxValue"/>.
+            </exception>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Repeat``1(``0,System.Int32)">
+            <summary>
+            Create sequence repeating value integer number of times.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Repeat``1(``0,System.UInt32)">
+            <summary>
+            Create sequence repeating value integer number of times.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.BigCount``1(System.Collections.Generic.IEnumerable{``0},System.Func{``0,System.Boolean})">
+            <summary>
+            Count sequence with greater than <see cref="F:System.Int32.MaxValue"/> items.
+            </summary>
+            <remarks>
+            Will take relatively long time to count if sequence has more than
+            <see cref="F:System.Int32.MaxValue"/> items.  If sequence contains close to
+            <see cref="F:System.Int64.MaxValue"/> items then do not expect this function to
+            return within the life time of your civilization.
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.Select``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``0,``0,``1})">
+            <summary>
+            Enumerate source passing previous, current, and next items to selector.
+            </summary>
+            <param name="source">Source enumerable.</param>
+            <param name="selector">
+            Function taking three <typeparamref name="TSource"/> parameters for
+            previous, current, and next items from source, and returning a value of
+            <typeparamref name="TResult"/>.
+            </param>
+            <returns>An enumerable of <typeparamref name="TResult"/>.</returns>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.EnumerableExtensions.DistinctBy``2(System.Collections.Generic.IEnumerable{``0},System.Func{``0,``1})">
+            <summary>
+            Select distinct items using keySelector delegate.  Two items with same
+            key are considered equivalent.  Only the first item in the sequence with
+            a given key is retained.
+            </summary>
+            <param name="source">Source enumerable.</param>
+            <param name="keySelector">
+            Function selecting key used to test items for distinctness.
+            </param>
+            <returns>Enumerable retaining only distinct items.</returns>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.IncrementingRangeEnumerable">
+            <summary>
+            Enumerable of a bounded sequence of incrementing integer values.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.IncrementingRangeEnumerable.#ctor(System.Nullable{System.Int32},System.Nullable{System.Int32},System.Nullable{System.Int32})">
+            <summary>
+            Initialize a new incrementing range enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.IncrementingRangeEnumerable.Step(System.Int32)">
+            <summary>
+            Value to increment successive values in the range sequence.  Positive
+            and negative values are regarded as equivalent, both specifying the
+            absolute increment value.
+            </summary>
+            <remarks>
+            Although positive and negative values of equivalent magnitude result in
+            the generation of the same sequence, a negative value is likely to cause
+            confusion.
+            </remarks>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.Range">
+            <summary>
+            Generate enumerations of integer values over a range.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.UpTo(System.Int32,System.Int32)">
+            <summary>
+            Generate an incrementing enumeration of <see cref="T:System.Int32"/> from
+            <paramref name="start"/> to <paramref name="end"/> inclusive with
+            default increment of 1 (one).
+            </summary>
+            <example>
+            <code>
+            var range = 12.UpTo(15); // 12,13,14,15
+            </code>
+            </example>
+            <remarks>
+            The <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> method can optionally be used to
+            specify an increment step, e.g.
+            <code>
+            var range = 11.UpTo(15).Step(2); // 11,13,15
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.UpTo(System.UInt32,System.UInt32)">
+            <summary>
+            Generate an incrementing enumeration of <see cref="T:System.UInt32"/> from
+            <paramref name="start"/> to <paramref name="end"/> inclusive with
+            default increment of 1 (one).
+            </summary>
+            <example>
+            <code>
+            var range = 12.UpTo(15); // 12,13,14,15
+            </code>
+            </example>
+            <remarks>
+            The <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> method can optionally be used to
+            specify an increment step, e.g.
+            <code>
+            var range = 11.UpTo(15).Step(2); // 11,13,15
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.DownTo(System.Int32,System.Int32)">
+            <summary>
+            Generate an decrementing enumeration of <see cref="T:System.Int32"/> from
+            <paramref name="start"/> to <paramref name="end"/> inclusive with
+            default decrement of 1 (one).
+            </summary>
+            <example>
+            <code>
+            var range = 15.DownTo(12); // 15,14,13,12
+            </code>
+            </example>
+            <remarks>
+            The <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> method can optionally be used to
+            specify a decrement step, e.g.
+            <code>
+            var range = 15.DownTo(11).Step(2); // 15,13,11
+            // or
+            var range = 15.DownTo(11).Step(-2); // 15,13,11
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.DownTo(System.UInt32,System.UInt32)">
+            <summary>
+            Generate an decrementing enumeration of <see cref="T:System.Int32"/> from
+            <paramref name="start"/> to <paramref name="end"/> inclusive with
+            default decrement of 1 (one).
+            </summary>
+            <example>
+            <code>
+            var range = 15.DownTo(12); // 15,14,13,12
+            </code>
+            </example>
+            <remarks>
+            The <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> method can optionally be used to
+            specify a decrement step, e.g.
+            <code>
+            var range = 15.DownTo(11).Step(2); // 15,13,11
+            // or
+            var range = 15.DownTo(11).Step(-2); // 15,13,11
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.From(System.Int32)">
+            <summary>
+            Initialize an enumeration of <see cref="T:System.Int32"/> starting from
+            <paramref name="start"/>.
+            </summary>
+            <remarks>
+            Methods <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.To(System.Int32)"/> and
+            <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> can be used specify end point and
+            increment/decrement step for the range.  If not specified end is set to
+            <paramref name="start"/> and step to +1.
+            Use this method for a long-hand fluent definition of a range, e.g.
+            <code>
+            var range = Range.From(10).To(20).Step(2);
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.From(System.UInt32)">
+            <summary>
+            Initialize an enumeration of <see cref="T:System.Int32"/> starting from
+            <paramref name="start"/>.
+            </summary>
+            <remarks>
+            Methods <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.To(System.Int32)"/> and
+            <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> can be used specify end point and
+            increment/decrement step for the range.  If not specified end is set to
+            <paramref name="start"/> and step to +1.
+            Use this method for a long-hand fluent definition of a range, e.g.
+            <code>
+            var range = Range.From(10).To(20).Step(2);
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.To(System.Int32,System.Int32)">
+            <summary>
+            Generate an enumeration of <see cref="T:System.Int32"/> from
+            <paramref name="start"/> to <paramref name="end"/> inclusive with
+            default increment of 1 (one).
+            </summary>
+            <example>
+            <code>
+            var range = 12.To(15); // 12,13,14,15
+            </code>
+            </example>
+            <remarks>
+            The <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> method can optionally be used to
+            specify a increment or decrement step, e.g.
+            <code>
+            var range = 11.To(15).Step(2); // 11,13,15
+            // or
+            var range = 15.To(11).Step(-2); // 15,13,11
+            </code>
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.Range.To(System.UInt32,System.UInt32)">
+            <summary>
+            Generate an enumeration of <see cref="T:System.Int32"/> from
+            <paramref name="start"/> to <paramref name="end"/> inclusive with
+            default increment of 1 (one).
+            </summary>
+            <example>
+            <code>
+            var range = 12.To(15); // 12,13,14,15
+            </code>
+            </example>
+            <remarks>
+            The <see cref="M:Ullet.Strix.Enumerable.RangeEnumerable.Step(System.Int32)"/> method can optionally be used to
+            specify a increment or decrement step, e.g.
+            <code>
+            var range = 11.To(15).Step(2); // 11,13,15
+            // or
+            var range = 15.To(11).Step(-2); // 15,13,11
+            </code>
+            </remarks>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.RangeEnumerator">
+            <summary>
+            Enumerator for a bounded sequence of incrementing or decrementing integer
+            values.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerator.#ctor(System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Initialize a new range enumerator.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerator.Dispose">
+            <summary>
+            Dispose resources.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerator.MoveNext">
+            <summary>
+            Move to next item in sequence.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.RangeEnumerator.Reset">
+            <summary>
+            Reset enumerator to start of sequence.
+            </summary>
+        </member>
+        <member name="P:Ullet.Strix.Enumerable.RangeEnumerator.Current">
+            <summary>
+            Get the current value in the sequence.
+            </summary>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.UnsignedDecrementingRangeEnumerable">
+            <summary>
+            Enumerable of a bounded sequence of decrementing integer values.
+            </summary>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.UnsignedRangeEnumerable">
+            <summary>
+            Enumerable of a bounded sequence of incrementing or decrementing integer
+            values.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.#ctor(System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.Int32})">
+            <summary>
+            Initialize a new range enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.From(System.UInt32)">
+            <summary>
+            Set starting value of the enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.To(System.UInt32)">
+            <summary>
+            Set final/terminating value of the enumeration.
+            </summary>
+            <remarks>
+            This value may not be in the enumeration if <see cref="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.Step(System.Int32)"/> is set to
+            a non-unit value.  Enumeration terminates at a value not greater than
+            this upper bound (or less than this lower bound if negative step).
+            </remarks>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.Step(System.Int32)">
+            <summary>
+            Value to increment successive values in the range sequence.  Negative
+            value will produce a decrementing sequence.  <see cref="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.From(System.UInt32)"/> must be
+            less than or equal to <see cref="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.To(System.UInt32)"/> is <see cref="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.Step(System.Int32)"/> is a
+            positive value.  <see cref="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.From(System.UInt32)"/> must be
+            greater than or equal to <see cref="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.To(System.UInt32)"/> is <see cref="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.Step(System.Int32)"/> is a
+            negative value.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerable.GetEnumerator">
+            <summary>
+            Get enumerator for this enumerable.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedDecrementingRangeEnumerable.#ctor(System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.Int32})">
+            <summary>
+            Initialize a new decrementing range enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedDecrementingRangeEnumerable.Step(System.Int32)">
+            <summary>
+            Value to decrement successive values in the range sequence.  Positive
+            and negative values are regarded as equivalent, both specifying the
+            absolute decrement value.
+            </summary>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.UnsignedIncrementingRangeEnumerable">
+            <summary>
+            Enumerable of a bounded sequence of incrementing integer values.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedIncrementingRangeEnumerable.#ctor(System.Nullable{System.UInt32},System.Nullable{System.UInt32},System.Nullable{System.Int32})">
+            <summary>
+            Initialize a new incrementing range enumeration.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedIncrementingRangeEnumerable.Step(System.Int32)">
+            <summary>
+            Value to increment successive values in the range sequence.  Positive
+            and negative values are regarded as equivalent, both specifying the
+            absolute increment value.
+            </summary>
+            <remarks>
+            Although positive and negative values of equivalent magnitude result in
+            the generation of the same sequence, a negative value is likely to cause
+            confusion.
+            </remarks>
+        </member>
+        <member name="T:Ullet.Strix.Enumerable.UnsignedRangeEnumerator">
+            <summary>
+            Enumerator for a bounded sequence of incrementing or decrementing integer
+            values.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerator.#ctor(System.UInt32,System.UInt32,System.Int32)">
+            <summary>
+            Initialize a new range enumerator.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerator.Dispose">
+            <summary>
+            Dispose resources.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerator.MoveNext">
+            <summary>
+            Move to next item in sequence.
+            </summary>
+        </member>
+        <member name="M:Ullet.Strix.Enumerable.UnsignedRangeEnumerator.Reset">
+            <summary>
+            Reset enumerator to start of sequence.
+            </summary>
+        </member>
+        <member name="P:Ullet.Strix.Enumerable.UnsignedRangeEnumerator.Current">
+            <summary>
+            Get the current value in the sequence.
+            </summary>
+        </member>
+    </members>
+</doc>

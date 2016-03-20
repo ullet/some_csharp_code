@@ -54,10 +54,6 @@
       <Project>{63cf2d66-9c38-4d0f-b626-cf5d54db7610}</Project>
       <Name>Ullet.Strix.Generic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Testing\Ullet.Strix.Testing.csproj">
-      <Project>{0f0778a9-f4a9-406a-b905-6a5a5b43fd69}</Project>
-      <Name>Ullet.Strix.Testing</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />

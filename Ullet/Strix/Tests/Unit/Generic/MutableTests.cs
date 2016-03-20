@@ -6,7 +6,6 @@
 
 using System;
 using NUnit.Framework;
-using Ullet.Strix.Testing;
 
 namespace Ullet.Strix.Generic.Tests.Unit
 {
@@ -33,9 +32,8 @@ namespace Ullet.Strix.Generic.Tests.Unit
     [Test]
     public void ThrowsExceptionIfGetValueWhenValueNotSet()
     {
-      var m = new Mutable<long>();
-
-      Assert.Throws<InvalidOperationException>(Subject.Getter(() => m.Value));
+      Assert.Throws<InvalidOperationException>(
+        () => ((Func<long>)(() => new Mutable<long>().Value))());
     }
 
     [Test]
@@ -113,9 +111,8 @@ namespace Ullet.Strix.Generic.Tests.Unit
     [Test]
     public void ThrowsExceptionIfConvertToValueTypeWhenValueNotSet()
     {
-      var m = new Mutable<long>();
-
-      Assert.Throws<InvalidOperationException>(Subject.Getter(() => (long) m));
+      Assert.Throws<InvalidOperationException>(
+        () => ((Func<long>)(() => (long)new Mutable<long>()))());
     }
 
     [Test]
@@ -170,7 +167,8 @@ namespace Ullet.Strix.Generic.Tests.Unit
       Mutable<long> m = null;
 
       // ReSharper disable once ExpressionIsAlwaysNull
-      Assert.Throws<NullReferenceException>(Subject.Getter(() => (long)m));
+      Assert.Throws<NullReferenceException>(
+        () => ((Func<long>)(() => (long)m))());
     }
 
     [Test]

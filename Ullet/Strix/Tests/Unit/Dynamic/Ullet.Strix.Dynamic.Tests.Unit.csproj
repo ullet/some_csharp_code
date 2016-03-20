@@ -62,14 +62,6 @@
       <Project>{758106ca-42fb-4ecb-b9f6-72954962dd28}</Project>
       <Name>Ullet.Strix.Dynamic</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\..\Enumerable\Ullet.Strix.Enumerable.csproj">
-      <Project>{ec7308bf-8bb9-42d2-9b51-220284cc936e}</Project>
-      <Name>Ullet.Strix.Enumerable</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\..\..\Testing\Ullet.Strix.Testing.csproj">
-      <Project>{0f0778a9-f4a9-406a-b905-6a5a5b43fd69}</Project>
-      <Name>Ullet.Strix.Testing</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{82A7F48D-3B50-4B1E-B82E-3ADA8210C358}" />
